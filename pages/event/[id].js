@@ -157,14 +157,14 @@ function Event({ event }) {
             <div className="flex items-center">
               <EmojiHappyIcon className="w-10 mr-2" />
               <span className="truncate">
-                Hosted by{" "}
+                Hosted by 
                 <a
-                  className="text-indigo-800 truncate hover:underline"
+                  className="text-indigo-800 truncate hover:underline ml-1"
                   href={`${process.env.NEXT_PUBLIC_TESTNET_EXPLORER_URL}address/${event.eventOwner}`}
                   target="_blank"
                   rel="noreferrer"
                 >
-                  
+                   {event.eventOwner}
                 </a>
               </span>
             </div>
