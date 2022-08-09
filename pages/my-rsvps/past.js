@@ -36,13 +36,13 @@ export default function MyPastRSVPs() {
   if (loading)
     return (
       <Dashboard page="rsvps" isUpcoming={false}>
-        <p>Loading...</p>
+        <p className="dark:text-gray-400">Loading...</p>
       </Dashboard>
     );
   if (error)
     return (
       <Dashboard page="rsvps" isUpcoming={false}>
-        <p>`Error! ${error.message}`</p>
+        <p className="dark:text-gray-400">`Error! ${error.message}`</p>
       </Dashboard>
     );
   if (data) console.log(data);
@@ -51,7 +51,7 @@ export default function MyPastRSVPs() {
     <Dashboard page="rsvps" isUpcoming={false}>
       {account ? (
         <div>
-          {data && !data.account && <p>No past RSVPs found</p>}
+          {data && !data.account && <p className="dark:text-gray-400">No past RSVPs found</p>}
           {data && data.account && (
             <ul
               role="list"
@@ -76,7 +76,7 @@ export default function MyPastRSVPs() {
         </div>
       ) : (
         <div className="flex flex-col items-center py-8">
-          <p className="mb-4">Please connect your wallet to view your rsvps</p>
+          <p className="mb-4 dark:text-gray-400">Please connect your wallet to view your rsvps</p>
           <ConnectButton />
         </div>
       )}

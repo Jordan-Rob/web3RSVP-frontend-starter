@@ -39,13 +39,13 @@ export default function MyUpcomingEvents() {
   if (loading)
     return (
       <Dashboard page="events" isUpcoming={true}>
-        <p>Loading...</p>
+        <p className="dark:text-gray-400">Loading...</p>
       </Dashboard>
     );
   if (error)
     return (
       <Dashboard page="events" isUpcoming={true}>
-        <p>`Error! ${error.message}`</p>
+        <p className="dark:text-gray-400">`Error! ${error.message}`</p>
       </Dashboard>
     );
 
@@ -53,7 +53,7 @@ export default function MyUpcomingEvents() {
     <Dashboard page="events" isUpcoming={true}>
       {account ? (
         <div>
-          {data && data.events.length == 0 && <p>No upcoming events found</p>}
+          {data && data.events.length == 0 && <p className="dark:text-gray-400">No upcoming events found</p>}
           {data && data.events.length > 0 && (
             <ul
               role="list"
@@ -74,7 +74,7 @@ export default function MyUpcomingEvents() {
         </div>
       ) : (
         <div className="flex flex-col items-center py-8">
-          <p className="mb-4">Please connect your wallet to view your events</p>
+          <p className="mb-4 dark:text-gray-400">Please connect your wallet to view your events</p>
           <ConnectButton />
         </div>
       )}
